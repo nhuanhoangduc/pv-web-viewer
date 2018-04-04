@@ -24,6 +24,7 @@
     "devDependencies": {
         "@fortawesome/fontawesome-free-webfonts": "^1.0.4",
         "copy-webpack-plugin": "^4.4.1",
+        "cornerstone-core": "^2.1.0",
         "http-server": "0.10.0",
         "itk": "8.1.1",
         "kw-doc": "1.1.1",
