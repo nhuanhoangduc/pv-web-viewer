@@ -41,12 +41,14 @@ export function setActiveProxyConfiguration(config) {
 
 export function createViewer(container, proxyConfig = null) {
   const { mode } = vtkURLExtract.extractURLParameters();
+  const appMode = mode || 'Generic';
+
   const proxyConfiguration =
-    proxyConfig || activeProxyConfig || Configs[mode] || Configs.Generic;
+    proxyConfig || activeProxyConfig || Configs[appMode].Proxy;
 
   const proxyManager = vtkProxyManager.newInstance({ proxyConfiguration });
   const mainView = ReactDOM.render(
-    <MainView proxyManager={proxyManager} />,
+    <MainView mode={appMode} proxyManager={proxyManager} />,
     container
   );
 
