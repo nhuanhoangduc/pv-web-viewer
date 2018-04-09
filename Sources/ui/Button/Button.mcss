@@ -11,11 +11,17 @@
   -webkit-outline: none;
 }
 
-.button:hover {
+.button:not([disabled]):hover {
   color: $colors.selected;
   border: 1px solid $colors.selected;
 }
 
-.button:active {
+.button:not([disabled]):active {
   filter: brightness(98%);
+}
+
+.checked, .checked:not([disabled]):hover {
+  color: white;
+  background: $colors.selected;
+  border: 1px solid #777;
 }
